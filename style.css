@@ -710,6 +710,245 @@ button, input, select, textarea {
   background: rgba(255, 255, 255, 0.1);
 }
 
+/* ==========================================================================
+   WHAT WE DO / SOLUTIONS SECTION & STATS BAR STYLES
+   ========================================================================== */
+.webcraft-solutions-section {
+  position: relative;
+  background-color: #070a12;
+  padding: 90px 40px 100px;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.webcraft-solutions-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.webcraft-solutions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+.solutions-top-tag {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #818cf8;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.solutions-headline {
+  font-family: var(--font-body);
+  font-size: clamp(2.4rem, 3.8vw, 3.5rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.solutions-desc {
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: #94a3b8;
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+
+.solutions-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.check-icon-badge {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+}
+
+.check-text {
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.btn-solutions-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  padding: 13px 30px;
+  border-radius: 9999px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  transition: all 0.2s ease;
+}
+
+.btn-solutions-explore:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Right Showcase & Circle Badge */
+.solutions-right-col {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.showcase-glow-backdrop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.25) 0%, rgba(99, 102, 241, 0.12) 50%, transparent 75%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.showcase-visual-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.showcase-main-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.45));
+}
+
+.satisfaction-circle-badge {
+  position: absolute;
+  bottom: -15px;
+  right: 20px;
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, #6366f1, #ec4899, #8b5cf6);
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
+  animation: pulse_glow 3s infinite ease-in-out;
+}
+
+@keyframes pulse_glow {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 30px rgba(99, 102, 241, 0.5); }
+  50% { transform: scale(1.04); box-shadow: 0 0 45px rgba(236, 72, 153, 0.6); }
+}
+
+.circle-inner-content {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #0b0f19;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.circle-percent {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+
+.circle-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #94a3b8;
+  line-height: 1.25;
+  text-transform: capitalize;
+}
+
+/* Bottom Purple Gradient Stats Bar */
+.webcraft-stats-bar {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  border-radius: 24px;
+  padding: 32px 40px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  align-items: center;
+  box-shadow: 0 20px 40px rgba(79, 70, 229, 0.35);
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.stat-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-num {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.stat-text {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
 /* Hamburger toggle for mobile nav */
 .menu-toggle {
   display: none;
@@ -2578,6 +2817,30 @@ button, input, select, textarea {
     grid-template-columns: 1fr;
     gap: 40px;
     margin-bottom: 40px;
+  }
+
+  .webcraft-solutions-section {
+    padding: 60px 20px 70px;
+  }
+
+  .webcraft-solutions-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .solutions-headline {
+    font-size: 2.1rem;
+  }
+
+  .webcraft-stats-bar {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 28px 20px;
+  }
+
+  .stat-divider {
+    display: none;
   }
 
   .webcraft-headline {
