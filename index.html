@@ -65,7 +65,7 @@
       </nav>
 
       <div class="header-actions">
-        <a href="#appointments" class="btn-book-now" id="book-now-btn">Book now</a>
+        <a href="#contact" class="btn-book-now" id="book-now-btn">Book now</a>
         <button class="menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" id="menu-toggle-btn">
           <span class="hamburger-bar"></span>
           <span class="hamburger-bar"></span>
@@ -416,53 +416,6 @@
               </svg>
             </button>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Appointments Section -->
-    <section id="appointments" class="appointments-section">
-      <div class="section-container">
-        <div class="section-header">
-          <span class="section-subtitle">Book a Session</span>
-          <h2 class="section-title">Schedule a Hardware & Software Blueprint Consultation</h2>
-          <p class="section-description">Pick a convenient date and time to consult directly with our Solutions
-            Architect for custom studio setups, interactive panels, or mobile app architecture.</p>
-        </div>
-
-        <div class="appointment-card glass-card">
-          <form id="appointment-form"
-            onsubmit="event.preventDefault(); alert('Appointment requested successfully! Our team will send confirmation shortly.');">
-            <div class="appointment-grid">
-              <div class="form-group">
-                <label for="appt-date">Preferred Date</label>
-                <input type="date" id="appt-date" class="form-input" required>
-              </div>
-              <div class="form-group">
-                <label for="appt-time">Preferred Time Slot</label>
-                <select id="appt-time" class="form-input form-select" required>
-                  <option value="" disabled selected>Select time slot…</option>
-                  <option value="10:00 AM">10:00 AM – 11:00 AM</option>
-                  <option value="02:00 PM">02:00 PM – 03:00 PM</option>
-                  <option value="04:30 PM">04:30 PM – 05:30 PM</option>
-                  <option value="07:00 PM">07:00 PM – 08:00 PM</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="appt-service">Consultation Focus</label>
-                <select id="appt-service" class="form-input form-select" required>
-                  <option value="Smart Classroom Setup">Smart Classroom & Board Setup</option>
-                  <option value="Soundproof Studio Setup">Soundproof Recording Studio</option>
-                  <option value="Custom Mobile App">Custom Mobile / Web App</option>
-                  <option value="E-Commerce Storefront">E-Commerce & Inventory Store</option>
-                </select>
-              </div>
-            </div>
-            <div style="margin-top: 1.5rem; text-align: center;">
-              <button type="submit" class="btn btn-primary btn-book-now"
-                style="padding: 12px 36px; font-size: 1rem;">Confirm Appointment</button>
-            </div>
-          </form>
         </div>
       </div>
     </section>
