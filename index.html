@@ -52,18 +52,32 @@
   <header class="app-header">
     <div class="header-container">
       <a href="#" class="logo" aria-label="Creators Vision Homepage">
-        <span class="logo-text">creators vision working with you and for you</span>
+        <div class="logo-icon-wrapper">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6L8.5 18L12 9L15.5 18L20 6" stroke="url(#logo_grad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="logo_grad" x1="4" y1="6" x2="20" y2="18" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#6366f1"/>
+                <stop offset="1" stop-color="#8b5cf6"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="logo-brand-text">Creators <span class="brand-bold">Vision</span></span>
       </a>
 
       <nav class="desktop-nav" aria-label="Main Navigation">
         <ul class="nav-list">
+          <li><a href="#" class="nav-link active">Home</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
           <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
+        <a href="#contact" class="btn-gradient-quote">Get a Free Quote &rarr;</a>
         <button class="menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" id="menu-toggle-btn">
           <span class="hamburger-bar"></span>
           <span class="hamburger-bar"></span>
@@ -77,9 +91,12 @@
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
     <nav class="mobile-nav" aria-label="Mobile Navigation">
       <ul class="mobile-nav-list">
+        <li><a href="#" class="mobile-nav-link">Home</a></li>
         <li><a href="#about" class="mobile-nav-link">About</a></li>
-        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
         <li><a href="#services" class="mobile-nav-link">Services</a></li>
+        <li><a href="#portfolio" class="mobile-nav-link">Portfolio</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        <li><a href="#contact" class="btn-gradient-quote" style="display:inline-block; margin-top:1rem;">Get a Free Quote &rarr;</a></li>
       </ul>
     </nav>
   </div>
@@ -87,31 +104,129 @@
   <!-- Main Content -->
   <main id="main-content">
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-container">
-        <div class="hero-image-wrapper">
-          <img src="assets/server_room_hero.png" alt="Precision Technology Solutions Server Room"
-            class="hero-server-img">
-          <div class="hero-overlay"></div>
-          <div class="hero-content-centered">
-            <h1 class="hero-main-title">Precision Technology Solutions</h1>
+    <!-- WebCraft Hero Section -->
+    <section class="webcraft-hero-section">
+      <div class="webcraft-hero-container">
+        <div class="webcraft-hero-grid">
+          
+          <!-- Left Column: Copy & CTAs -->
+          <div class="webcraft-hero-left">
+            <div class="badge-pill">
+              <span class="badge-dot"></span>
+              <span class="badge-text">Modern Websites. Real Results.</span>
+            </div>
+            
+            <h1 class="webcraft-headline">
+              We Build Websites<br>
+              That Grow Your<br>
+              <span class="purple-gradient-text">Business.</span>
+            </h1>
+            
+            <p class="webcraft-subheadline">
+              We create fast, responsive and result-driven websites that help you attract, engage and convert more customers.
+            </p>
+            
+            <div class="webcraft-hero-btns">
+              <a href="#contact" class="btn-hero-primary">Get Started &rarr;</a>
+              <a href="#portfolio" class="btn-hero-secondary">
+                View Our Work
+                <span class="play-icon-wrapper">
+                  <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 6L1.5 11.1962L1.5 0.803847L9 6Z" fill="#111827"/>
+                  </svg>
+                </span>
+              </a>
+            </div>
+            
+            <div class="webcraft-social-proof">
+              <div class="avatar-stack">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Client Avatar 1" class="avatar-img">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Client Avatar 2" class="avatar-img">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="Client Avatar 3" class="avatar-img">
+                <div class="avatar-plus">+</div>
+              </div>
+              <div class="proof-details">
+                <span class="proof-count">200+ Happy Clients</span>
+                <div class="proof-stars">
+                  <span class="star-rating">★★★★★</span>
+                  <span class="rating-num">4.9/5</span>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
+          
+          <!-- Right Column: Laptop Mockup Visual -->
+          <div class="webcraft-hero-right">
+            <div class="laptop-glow-backdrop"></div>
+            <div class="laptop-img-wrapper">
+              <img src="assets/hero_laptop_mockup.png" alt="Creators Vision Web Application Laptop Mockup" class="laptop-mockup-img">
+            </div>
+          </div>
 
-    <!-- About Hero Fluid Gradient Banner Section -->
-    <section id="about" class="about-hero-fluid-section">
-      <div class="about-hero-fluid-container">
-        <div class="about-hero-fluid-wrapper">
-          <img src="assets/vibrant_fluid_gradient_bg.png" alt="Vibrant Fluid Gradient Background" class="about-hero-fluid-img">
-          <div class="about-hero-fluid-overlay"></div>
-          <div class="about-hero-fluid-content">
-            <h1 class="about-hero-fluid-title">Creators <span class="colorful-gradient-text">Vision</span></h1>
-            <p class="about-hero-fluid-subtitle">Working for you <span class="colorful-amp">&amp;</span> Building for you</p>
-          </div>
         </div>
+
+        <!-- Bottom Feature Banner (Dark Glass Floating Card) -->
+        <div class="webcraft-feature-banner">
+          <div class="feature-card">
+            <div class="feature-icon-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <div class="feature-info">
+              <h3 class="feature-title">Responsive Design</h3>
+              <p class="feature-desc">Perfect look on every device and screen size.</p>
+            </div>
+          </div>
+
+          <div class="feature-divider"></div>
+
+          <div class="feature-card">
+            <div class="feature-icon-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <div class="feature-info">
+              <h3 class="feature-title">Lightning Fast</h3>
+              <p class="feature-desc">Optimized for speed and performance.</p>
+            </div>
+          </div>
+
+          <div class="feature-divider"></div>
+
+          <div class="feature-card">
+            <div class="feature-icon-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <polyline points="9 12 11 14 15 10"></polyline>
+              </svg>
+            </div>
+            <div class="feature-info">
+              <h3 class="feature-title">Secure & Reliable</h3>
+              <p class="feature-desc">Built with best practices for security and stability.</p>
+            </div>
+          </div>
+
+          <div class="feature-divider"></div>
+
+          <div class="feature-card">
+            <div class="feature-icon-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+              </svg>
+            </div>
+            <div class="feature-info">
+              <h3 class="feature-title">SEO Optimized</h3>
+              <p class="feature-desc">Structured to rank higher and get more visibility.</p>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </section>
 
