@@ -60,12 +60,10 @@
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
           <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#cart" class="nav-link cart-link" id="cart-nav-btn">Cart</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
-        <a href="#contact" class="btn-book-now" id="book-now-btn">Book now</a>
         <button class="menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" id="menu-toggle-btn">
           <span class="hamburger-bar"></span>
           <span class="hamburger-bar"></span>
@@ -81,12 +79,7 @@
       <ul class="mobile-nav-list">
         <li><a href="#about" class="mobile-nav-link">About</a></li>
         <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
-        <li><a href="#estimator" class="mobile-nav-link">Shop</a></li>
         <li><a href="#services" class="mobile-nav-link">Services</a></li>
-        <li><a href="#appointments" class="mobile-nav-link">Appointments</a></li>
-        <li><a href="#cart" class="mobile-nav-link cart-link">Cart</a></li>
-        <li><a href="#appointments" class="mobile-nav-link btn-book-now"
-            style="display:inline-block; text-align:center; margin-top:1rem;">Book now</a></li>
       </ul>
     </nav>
   </div>
@@ -534,24 +527,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Cart Slide-Over Modal -->
-  <div class="cart-drawer-overlay" id="cart-drawer-overlay" aria-hidden="true">
-    <div class="cart-drawer" id="cart-drawer">
-      <div class="cart-drawer-header">
-        <h3 class="cart-drawer-title">Shopping Cart & Quotations</h3>
-        <button class="cart-close-btn" id="cart-close-btn" aria-label="Close Cart">&times;</button>
-      </div>
-      <div class="cart-drawer-body">
-        <div class="cart-empty-state" id="cart-empty">
-          <p>Your blueprint cart is empty.</p>
-          <a href="#estimator" class="btn btn-primary" style="margin-top:1rem; font-size:0.85rem;"
-            onclick="document.getElementById('cart-drawer-overlay').classList.remove('open');">Add Blueprint
-            Services</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Core Script -->
   <script src="main.js"></script>
