@@ -353,6 +353,38 @@ document.addEventListener('DOMContentLoaded', () => {
   startAutoplay();
 
 
+  // Target WhatsApp phone number (in international format without '+' or spaces)
+  const WHATSAPP_NUMBER = '919876543210';
+
+  // Helper function to construct WhatsApp URL and redirect
+  const redirectToWhatsApp = (messageText) => {
+    const encodedMessage = encodeURIComponent(messageText);
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  // Handle Main Contact Page Form Submit -> Redirect to WhatsApp
+  const contactPageForm = document.getElementById('contact-page-form');
+  if (contactPageForm) {
+    contactPageForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const firstName = document.getElementById('contact-first-name')?.value.trim() || '';
+      const lastName = document.getElementById('contact-last-name')?.value.trim() || '';
+      const phone = document.getElementById('contact-phone')?.value.trim() || '';
+      const message = document.getElementById('contact-message')?.value.trim() || '';
+
+      const fullName = `${firstName} ${lastName}`.trim();
+
+      let waMessage = `*New Inquiry - Creators Vision*\n\n`;
+      if (fullName) waMessage += `👤 *Name:* ${fullName}\n`;
+      if (phone) waMessage += `📞 *Contact Number:* ${phone}\n`;
+      if (message) waMessage += `💬 *Message:* ${message}\n`;
+
+      redirectToWhatsApp(waMessage);
+    });
+  }
+
   // ==========================================
   // 5. Contact Form intake & Validation
   // ==========================================
@@ -458,7 +490,7 @@ document.addEventListener('DOMContentLoaded', () => {
     submitText.textContent = 'Sending Proposal Request…';
     submitSpinner.classList.remove('hidden');
 
-    // 2. Perform mock request with 1.5s delay
+    // 2. Perform WhatsApp redirection with form details
     setTimeout(() => {
       // Transition out of sending state
       submitBtn.disabled = false;
@@ -469,9 +501,25 @@ document.addEventListener('DOMContentLoaded', () => {
       intakeForm.classList.add('hidden');
       formSuccess.classList.remove('hidden');
       
+      // Build WhatsApp message text from intake fields
+      const nameVal = fields.name.input.value.trim();
+      const contactVal = fields.email.input.value.trim();
+      const bizType = fields.business_type.input.options[fields.business_type.input.selectedIndex]?.text || '';
+      const budgetVal = fields.budget.input.options[fields.budget.input.selectedIndex]?.text || '';
+      const detailsVal = fields.details.input.value.trim();
+
+      let waMessage = `*New Proposal Blueprint Request*\n\n`;
+      if (nameVal) waMessage += `👤 *Name:* ${nameVal}\n`;
+      if (contactVal) waMessage += `📞 *Contact:* ${contactVal}\n`;
+      if (bizType) waMessage += `🏢 *Industry:* ${bizType}\n`;
+      if (budgetVal) waMessage += `💰 *Budget:* ${budgetVal}\n`;
+      if (detailsVal) waMessage += `📝 *Blueprint Details:*\n${detailsVal}\n`;
+
+      redirectToWhatsApp(waMessage);
+
       // Auto scroll success card into view on small screens
       document.getElementById('contact-form-container').scrollIntoView({ behavior: 'smooth' });
-    }, 1500);
+    }, 800);
   });
 
   // Reset form back to editing
