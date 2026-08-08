@@ -3,6 +3,31 @@
  * Dynamic Navbar, Portfolio Filters, Testimonial Carousel, Cost Estimator, Form Validation
  */
 
+// Global WhatsApp submission handler (works reliably across all browsers & devices)
+window.handleWhatsAppSubmit = function(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  
+  const firstName = (document.getElementById('contact-first-name')?.value || '').trim();
+  const lastName = (document.getElementById('contact-last-name')?.value || '').trim();
+  const phone = (document.getElementById('contact-phone')?.value || '').trim();
+  const message = (document.getElementById('contact-message')?.value || '').trim();
+  
+  const fullName = (firstName + ' ' + lastName).trim() || 'Client';
+  
+  let waText = `*New Inquiry - Creators Vision*\n\n`;
+  if (fullName) waText += `👤 *Name:* ${fullName}\n`;
+  if (phone) waText += `📞 *Contact Number:* ${phone}\n`;
+  if (message) waText += `💬 *Message:* ${message}\n`;
+  
+  const targetNumber = '919227056944';
+  const encodedText = encodeURIComponent(waText);
+  const waUrl = `https://wa.me/${targetNumber}?text=${encodedText}`;
+  
+  // Direct location redirect works natively across all iOS/Android mobile devices & desktops
+  window.location.href = waUrl;
+  return false;
+};
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================
@@ -14,16 +39,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
   // Change navbar background on scroll
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
+  if (header) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  }
 
   // Toggle mobile navigation overlay
   const toggleMobileMenu = () => {
+    if (!menuToggleBtn || !mobileMenu) return;
     const isExpanded = menuToggleBtn.getAttribute('aria-expanded') === 'true';
     menuToggleBtn.setAttribute('aria-expanded', !isExpanded);
     mobileMenu.classList.toggle('open');
@@ -31,14 +59,18 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = isExpanded ? '' : 'hidden'; // Lock background scroll
   };
 
-  menuToggleBtn.addEventListener('click', toggleMobileMenu);
+  if (menuToggleBtn && mobileMenu) {
+    menuToggleBtn.addEventListener('click', toggleMobileMenu);
+  }
 
   // Close mobile navigation when a link is clicked
   mobileNavLinks.forEach(link => {
     link.addEventListener('click', () => {
-      menuToggleBtn.setAttribute('aria-expanded', 'false');
-      mobileMenu.classList.remove('open');
-      mobileMenu.setAttribute('aria-hidden', 'true');
+      if (menuToggleBtn) menuToggleBtn.setAttribute('aria-expanded', 'false');
+      if (mobileMenu) {
+        mobileMenu.classList.remove('open');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+      }
       document.body.style.overflow = '';
     });
   });
@@ -303,59 +335,62 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentSlide = 0;
   let slideInterval;
 
-  const showSlide = (index) => {
-    slides.forEach(slide => slide.classList.remove('active'));
-    indicators.forEach(ind => ind.classList.remove('active'));
-    
-    // Wrap-around bounds checker
-    currentSlide = (index + slides.length) % slides.length;
-    
-    slides[currentSlide].classList.add('active');
-    indicators[currentSlide].classList.add('active');
-  };
+  if (slides.length > 0) {
+    const showSlide = (index) => {
+      slides.forEach(slide => slide.classList.remove('active'));
+      indicators.forEach(ind => ind.classList.remove('active'));
+      
+      currentSlide = (index + slides.length) % slides.length;
+      
+      if (slides[currentSlide]) slides[currentSlide].classList.add('active');
+      if (indicators[currentSlide]) indicators[currentSlide].classList.add('active');
+    };
 
-  const nextSlide = () => {
-    showSlide(currentSlide + 1);
-  };
+    const nextSlide = () => {
+      showSlide(currentSlide + 1);
+    };
 
-  const startAutoplay = () => {
-    slideInterval = setInterval(nextSlide, 7000); // cycle slides every 7s
-  };
+    const startAutoplay = () => {
+      slideInterval = setInterval(nextSlide, 7000);
+    };
 
-  const stopAutoplay = () => {
-    clearInterval(slideInterval);
-  };
+    const stopAutoplay = () => {
+      clearInterval(slideInterval);
+    };
 
-  // Wire buttons
-  prevBtn.addEventListener('click', () => {
-    stopAutoplay();
-    showSlide(currentSlide - 1);
-    startAutoplay();
-  });
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        stopAutoplay();
+        showSlide(currentSlide - 1);
+        startAutoplay();
+      });
+    }
 
-  nextBtn.addEventListener('click', () => {
-    stopAutoplay();
-    showSlide(currentSlide + 1);
-    startAutoplay();
-  });
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        stopAutoplay();
+        showSlide(currentSlide + 1);
+        startAutoplay();
+      });
+    }
 
-  // Wire indicator dots
-  indicators.forEach(ind => {
-    ind.addEventListener('click', () => {
-      stopAutoplay();
-      const slideIndex = parseInt(ind.getAttribute('data-slide'));
-      showSlide(slideIndex);
-      startAutoplay();
+    indicators.forEach(ind => {
+      ind.addEventListener('click', () => {
+        stopAutoplay();
+        const slideIndex = parseInt(ind.getAttribute('data-slide'));
+        showSlide(slideIndex);
+        startAutoplay();
+      });
     });
-  });
 
-  // Slide autoplay hooks
-  const sliderContainer = document.querySelector('.testimonials-slider-container');
-  sliderContainer.addEventListener('mouseenter', stopAutoplay);
-  sliderContainer.addEventListener('mouseleave', startAutoplay);
+    const sliderContainer = document.querySelector('.testimonials-slider-container');
+    if (sliderContainer) {
+      sliderContainer.addEventListener('mouseenter', stopAutoplay);
+      sliderContainer.addEventListener('mouseleave', startAutoplay);
+    }
 
-  // Initialize
-  startAutoplay();
+    startAutoplay();
+  }
 
 
   // Target WhatsApp phone number (in international format without '+' or spaces)
