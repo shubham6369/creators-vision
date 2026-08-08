@@ -516,4 +516,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ==========================================
+  // 7. Interactive Mobile Mockup Controls
+  // ==========================================
+  // Phone 3 Pricing Toggle
+  const pricingToggles = document.querySelectorAll('.phone-pricing-toggle .toggle-pill');
+  pricingToggles.forEach(pill => {
+    pill.addEventListener('click', () => {
+      pricingToggles.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+    });
+  });
+
+  // Phone 4 Filter Chips
+  const filterChips = document.querySelectorAll('.phone-filter-row .filter-chip');
+  const phoneProjects = document.querySelectorAll('.phone-project-thumb-card');
+  filterChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      filterChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const cat = chip.textContent.trim().toLowerCase();
+      phoneProjects.forEach(card => {
+        const cardCat = card.querySelector('.p-cat').textContent.trim().toLowerCase();
+        if (cat === 'all' || cardCat.includes(cat)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
 });
+

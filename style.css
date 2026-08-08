@@ -3070,3 +3070,871 @@ button, input, select, textarea {
   font-size: 0.95rem;
 }
 
+/* ====================================================
+   Landing Page Extension Sections (Screenshot Exact Layout)
+   ==================================================== */
+
+/* 1. Brand Logos Bar */
+.brand-logos-bar {
+  padding: 2.2rem 0;
+  background: linear-gradient(135deg, #3b0764 0%, #5b21b6 50%, #4c1d95 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.brand-logos-container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  filter: brightness(0) invert(1);
+}
+
+.logo-item:hover {
+  opacity: 1;
+  transform: scale(1.06);
+}
+
+/* Common Section Badge & Text Arrows */
+.badge-purple-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #7c3aed;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.btn-text-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #7c3aed;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-text-arrow:hover {
+  color: #5b21b6;
+  transform: translateX(4px);
+}
+
+/* 2. WHAT WE DO / Smart Solutions Section */
+.smart-solutions-section {
+  padding: 3rem 0;
+  background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 50%, #5b21b6 100%);
+}
+
+.smart-solutions-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2.2rem;
+  background: #ffffff;
+  border-radius: 28px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+.smart-solutions-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.solutions-header-col .solutions-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #0f172a;
+  margin-bottom: 0.85rem;
+}
+
+.solutions-header-col .solutions-subtext {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.solutions-cards-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.1rem;
+}
+
+.solution-card {
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 20px;
+  padding: 1.6rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  height: 100%;
+}
+
+.solution-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(124, 58, 237, 0.12);
+  border-color: rgba(124, 58, 237, 0.25);
+}
+
+.card-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.1rem;
+}
+
+.icon-purple { background: #f3e8ff; color: #7c3aed; }
+.icon-orange { background: #ffedd5; color: #ea580c; }
+.icon-blue   { background: #e0f2fe; color: #0284c7; }
+.icon-green  { background: #dcfce7; color: #16a34a; }
+.icon-violet { background: #ede9fe; color: #6d28d9; }
+
+.solution-card .card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.solution-card .card-snippet {
+  font-size: 0.82rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.card-learn-link {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #7c3aed;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: transform 0.25s ease;
+}
+
+.card-learn-link:hover {
+  color: #5b21b6;
+}
+
+/* 3. OUR RECENT PROJECTS Section */
+.recent-projects-section {
+  padding: 3rem 0;
+  background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 50%, #5b21b6 100%);
+}
+
+.recent-projects-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2.2rem;
+  background: #ffffff;
+  border-radius: 28px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+.recent-projects-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.projects-header-col .projects-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #0f172a;
+  margin-bottom: 0.85rem;
+}
+
+.projects-header-col .projects-subtext {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.projects-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.1rem;
+}
+
+.project-showcase-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-showcase-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.12);
+  border-color: rgba(124, 58, 237, 0.3);
+}
+
+.project-thumb-wrapper {
+  position: relative;
+  width: 100%;
+  height: 155px;
+  overflow: hidden;
+  background: #0f172a;
+}
+
+.project-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-showcase-card:hover .project-thumb-img {
+  transform: scale(1.08);
+}
+
+.project-info {
+  padding: 0.9rem 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.project-item-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.project-item-tag {
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: #64748b;
+}
+
+/* 4. Dark Stats Banner Section */
+.dark-stats-section {
+  padding: 2.5rem 0;
+  background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 50%, #5b21b6 100%);
+}
+
+.dark-stats-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.dark-stats-box {
+  background: linear-gradient(135deg, #0a0b16 0%, #11152a 50%, #170d38 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  padding: 2.2rem 2.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.dark-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.dark-stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(124, 58, 237, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c084fc;
+  flex-shrink: 0;
+}
+
+.dark-stat-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.dark-stat-number {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  line-height: 1.1;
+}
+
+.dark-stat-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #94a3b8;
+  margin-top: 0.2rem;
+}
+
+.dark-stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* 5. Mobile Mockups Showcase Row */
+.mobile-showcase-section {
+  padding: 3rem 0 5.5rem;
+  background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 50%, #5b21b6 100%);
+}
+
+.mobile-showcase-container {
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.mobile-phones-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.1rem;
+  padding: 0.5rem 0.25rem 1.5rem;
+}
+
+.phone-frame {
+  background: #0f172a;
+  border-radius: 34px;
+  border: 3.5px solid #1e293b;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  padding: 0.5rem;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  height: 470px;
+  overflow: hidden;
+  user-select: none;
+  transition: all 0.35s ease;
+}
+
+.phone-frame:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(124, 58, 237, 0.25);
+  border-color: rgba(124, 58, 237, 0.5);
+}
+
+.phone-island {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 12px;
+  background: #000000;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.phone-status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0.6rem 0.2rem;
+  font-size: 0.62rem;
+  color: #94a3b8;
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+.phone-status-bar .status-icons {
+  display: flex;
+  gap: 0.25rem;
+  font-size: 0.6rem;
+}
+
+.wp-app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.35rem 0.6rem;
+  background: #ffffff;
+  border-bottom: 1px solid #f1f5f9;
+  border-radius: 8px 8px 0 0;
+}
+
+.wp-logo-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #0073aa;
+}
+
+.wp-menu-icon {
+  font-size: 0.85rem;
+  color: #475569;
+  font-weight: 700;
+}
+
+.phone-screen-content {
+  background: #f8fafc;
+  flex: 1;
+  padding: 0.65rem 0.55rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  scrollbar-width: none;
+}
+
+.phone-screen-content::-webkit-scrollbar {
+  display: none;
+}
+
+.mini-purple-tag {
+  font-size: 0.52rem;
+  font-weight: 700;
+  color: #7c3aed;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.phone-heading {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.25;
+}
+
+.phone-body-text {
+  font-size: 0.62rem;
+  color: #64748b;
+  line-height: 1.35;
+}
+
+.phone-cta-btn {
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  color: #ffffff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  border-radius: 5px;
+  padding: 0.35rem 0.6rem;
+  width: fit-content;
+  cursor: pointer;
+  border: none;
+}
+
+.phone-perf-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 0.45rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  margin-top: 0.3rem;
+}
+
+.perf-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.55rem;
+  color: #64748b;
+}
+
+.perf-score-row {
+  display: flex;
+  align-items: baseline;
+  margin: 0.2rem 0;
+}
+
+.score-num {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #16a34a;
+}
+
+.score-total {
+  font-size: 0.6rem;
+  color: #94a3b8;
+}
+
+/* Phone 2 Service List & Banner */
+.phone-service-list {
+  list-style: none;
+  font-size: 0.6rem;
+  color: #334155;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.phone-service-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 0.3rem 0.45rem;
+  border-radius: 6px;
+  border: 1px solid #f1f5f9;
+}
+
+.phone-banner-card {
+  background: linear-gradient(135deg, #4c1d95, #6d28d9);
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.phone-banner-card h5 {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.phone-banner-card p {
+  font-size: 0.55rem;
+  color: #ddd6fe;
+  margin: 0.15rem 0 0.4rem;
+}
+
+.phone-banner-btn {
+  background: #ffffff;
+  color: #6d28d9;
+  font-size: 0.55rem;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+/* Phone 3 Pricing Toggle & Cards */
+.phone-pricing-toggle {
+  display: flex;
+  background: #e2e8f0;
+  padding: 2px;
+  border-radius: 6px;
+  gap: 2px;
+  margin-bottom: 0.3rem;
+}
+
+.toggle-pill {
+  font-size: 0.52rem;
+  padding: 0.2rem 0.3rem;
+  border-radius: 4px;
+  color: #64748b;
+  font-weight: 600;
+  flex: 1;
+  text-align: center;
+}
+
+.toggle-pill.active {
+  background: #7c3aed;
+  color: #ffffff;
+}
+
+.phone-price-card {
+  background: #ffffff;
+  border: 1.5px solid #7c3aed;
+  border-radius: 8px;
+  padding: 0.45rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.price-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.price-amount {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #7c3aed;
+}
+
+.plan-features {
+  list-style: none;
+  font-size: 0.52rem;
+  color: #64748b;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.plan-btn {
+  background: #7c3aed;
+  color: #ffffff;
+  font-size: 0.55rem;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 0.25rem;
+  border: none;
+  margin-top: 0.2rem;
+  cursor: pointer;
+}
+
+.phone-price-card-sm {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 0.35rem 0.45rem;
+}
+
+.sm-plan-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Phone 4 Portfolio Filters & Cards */
+.phone-filter-row {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 0.2rem;
+}
+
+.filter-chip {
+  font-size: 0.5rem;
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  background: #e2e8f0;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.filter-chip.active {
+  background: #7c3aed;
+  color: #ffffff;
+}
+
+.phone-project-thumb-card {
+  background: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.phone-project-img {
+  width: 100%;
+  height: 55px;
+  object-fit: cover;
+}
+
+.phone-project-meta {
+  padding: 0.25rem 0.4rem;
+}
+
+.p-title {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.p-cat {
+  font-size: 0.5rem;
+  color: #64748b;
+}
+
+.phone-mini-btn {
+  background: #f1f5f9;
+  color: #7c3aed;
+  font-size: 0.55rem;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 0.25rem;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  margin-top: 0.2rem;
+}
+
+/* Phone 5 Checklist & Testimonial */
+.phone-feature-checklist {
+  list-style: none;
+  font-size: 0.58rem;
+  color: #334155;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.phone-testimonial-card {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 0.45rem;
+  border: 1px solid #e2e8f0;
+  margin-top: 0.2rem;
+}
+
+.test-quote {
+  font-size: 0.55rem;
+  font-style: italic;
+  color: #475569;
+}
+
+.test-author {
+  display: block;
+  font-size: 0.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 0.2rem;
+}
+
+.test-stars {
+  font-size: 0.55rem;
+  color: #eab308;
+  font-weight: 700;
+}
+
+/* Phone 6 Form & Contact Info */
+.phone-mini-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.mini-input {
+  width: 100%;
+  font-size: 0.55rem;
+  padding: 0.25rem 0.4rem;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.mini-textarea {
+  resize: none;
+}
+
+.phone-send-btn {
+  background: #7c3aed;
+  color: #ffffff;
+  font-size: 0.55rem;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 0.25rem;
+  border: none;
+  cursor: pointer;
+}
+
+.phone-contact-info {
+  font-size: 0.5rem;
+  color: #64748b;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-top: 0.2rem;
+}
+
+/* Phone Bottom Navigation Bar */
+.phone-bottom-nav {
+  background: #ffffff;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.3rem 0;
+  border-radius: 0 0 24px 24px;
+}
+
+.nav-item {
+  font-size: 0.55rem;
+  color: #94a3b8;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.nav-item small {
+  font-size: 0.45rem;
+}
+
+.nav-item.active {
+  color: #7c3aed;
+  font-weight: 700;
+}
+
+/* Responsive Layout Media Queries */
+@media (max-width: 1200px) {
+  .solutions-cards-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .projects-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .mobile-phones-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .smart-solutions-grid,
+  .recent-projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dark-stats-box {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .dark-stat-divider {
+    display: none;
+  }
+
+  .mobile-phones-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .solutions-cards-row,
+  .projects-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mobile-phones-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+
