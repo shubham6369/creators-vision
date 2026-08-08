@@ -78,6 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Custom visual toggle handler for calculator inputs
   const setupCalculatorToggles = () => {
+    if (!estimatorForm) return;
     const options = estimatorForm.querySelectorAll('.calc-option');
     const checkboxes = estimatorForm.querySelectorAll('.calc-checkbox-card');
 
@@ -248,9 +249,13 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Wire event handlers
-  setupCalculatorToggles();
-  calculateEstimate(); // initial call
-  applyBlueprintBtn.addEventListener('click', applyEstimateToForm);
+  if (estimatorForm) {
+    setupCalculatorToggles();
+    calculateEstimate(); // initial call
+    if (applyBlueprintBtn) {
+      applyBlueprintBtn.addEventListener('click', applyEstimateToForm);
+    }
+  }
 
 
   // ==========================================
