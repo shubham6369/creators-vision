@@ -2939,8 +2939,8 @@ button, input, select, textarea {
     line-height: 1.3;
   }
 
-  .desktop-nav, .nav-cta, .btn-book-now {
-    display: none;
+  .desktop-nav, .nav-cta, .btn-book-now, .header-actions > .btn-gradient-quote {
+    display: none !important;
   }
 
   .menu-toggle {
@@ -4003,6 +4003,177 @@ button, input, select, textarea {
 
   .mobile-phones-row {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Comprehensive Mobile & Tablet Responsive Enhancements (Phones & Mobile Safari/Chrome)
+   ========================================================================== */
+
+/* 1. Global Horizontal Overflow Guard */
+html, body {
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+}
+
+/* 2. Mobile Header & Viewport Adjustments (<= 768px) */
+@media (max-width: 768px) {
+  .app-header .btn-gradient-quote,
+  .header-actions .btn-gradient-quote {
+    display: none !important;
+  }
+
+  .header-container {
+    padding: 0 16px;
+    height: 70px;
+    justify-content: space-between;
+  }
+
+  .logo-brand-text {
+    font-size: 1.15rem;
+  }
+
+  .header-logo-img {
+    height: 36px;
+    width: 36px;
+  }
+
+  /* Prevent auto-zoom on mobile input focus on iOS */
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+
+  /* Hero Section Mobile Adjustments */
+  .webcraft-hero-section {
+    padding: 90px 16px 36px;
+  }
+
+  .webcraft-headline {
+    font-size: 2rem !important;
+    line-height: 1.25;
+  }
+
+  .webcraft-subhead {
+    font-size: 0.98rem;
+    line-height: 1.5;
+  }
+
+  .laptop-mockup-wrapper {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Feature cards & Section grids */
+  .precision-services-cards-grid,
+  .portfolio-grid,
+  .solutions-cards-row,
+  .projects-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  .precision-card-img-wrapper {
+    height: 220px;
+  }
+
+  /* Portfolio Filters Horizontal Touch Scroll */
+  .portfolio-filters {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 8px 4px 14px;
+    gap: 8px;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .portfolio-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-btn {
+    flex-shrink: 0;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+
+  /* Transformation & Performance Sections */
+  .transformation-container,
+  .performance-container {
+    padding: 0 16px;
+  }
+
+  .transformation-img,
+  .performance-img {
+    height: auto;
+    max-height: 320px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+
+  /* Footer Mobile Layout */
+  .app-footer {
+    padding: 40px 16px 20px;
+  }
+
+  .app-footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .footer-brand-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-bottom-container {
+    flex-direction: column-reverse;
+    gap: 20px;
+    text-align: center;
+    padding: 20px 16px;
+  }
+
+  .footer-social-circles {
+    justify-content: center;
+  }
+}
+
+/* 3. Small Mobile Phones (<= 480px) */
+@media (max-width: 480px) {
+  .hero-title,
+  .webcraft-headline,
+  .section-title {
+    font-size: 1.75rem !important;
+  }
+
+  .webcraft-hero-btns {
+    width: 100%;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-secondary,
+  .btn-contact-send {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 14px 20px;
+  }
+
+  .dark-stats-box {
+    padding: 20px 16px;
+    gap: 16px;
+  }
+
+  .dark-stat-item {
+    min-width: 45%;
+  }
+
+  .dark-stat-number {
+    font-size: 1.8rem;
   }
 }
 
