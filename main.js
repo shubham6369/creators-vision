@@ -364,8 +364,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Helper function to construct WhatsApp URL and redirect
   const redirectToWhatsApp = (messageText) => {
     const encodedMessage = encodeURIComponent(messageText);
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodedMessage}`;
-    window.open(whatsappUrl, '_blank');
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+    
+    // Direct location assignment opens WhatsApp app on mobile or web on desktop without popup blockers
+    window.location.href = whatsappUrl;
   };
 
   // Handle Main Contact Page Form Submit -> Redirect to WhatsApp
@@ -489,42 +491,21 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Submit Action Simulation
-    // 1. Enter sending state
-    submitBtn.disabled = true;
-    submitText.textContent = 'Sending Proposal Request…';
-    submitSpinner.classList.remove('hidden');
+    // Build WhatsApp message text from intake fields
+    const nameVal = fields.name.input.value.trim();
+    const contactVal = fields.email.input.value.trim();
+    const bizType = fields.business_type.input.options[fields.business_type.input.selectedIndex]?.text || '';
+    const budgetVal = fields.budget.input.options[fields.budget.input.selectedIndex]?.text || '';
+    const detailsVal = fields.details.input.value.trim();
 
-    // 2. Perform WhatsApp redirection with form details
-    setTimeout(() => {
-      // Transition out of sending state
-      submitBtn.disabled = false;
-      submitText.textContent = 'Submit Proposal Request';
-      submitSpinner.classList.add('hidden');
+    let waMessage = `*New Proposal Blueprint Request*\n\n`;
+    if (nameVal) waMessage += `👤 *Name:* ${nameVal}\n`;
+    if (contactVal) waMessage += `📞 *Contact:* ${contactVal}\n`;
+    if (bizType) waMessage += `🏢 *Industry:* ${bizType}\n`;
+    if (budgetVal) waMessage += `💰 *Budget:* ${budgetVal}\n`;
+    if (detailsVal) waMessage += `📝 *Blueprint Details:*\n${detailsVal}\n`;
 
-      // Hide intake form layout and show success state
-      intakeForm.classList.add('hidden');
-      formSuccess.classList.remove('hidden');
-      
-      // Build WhatsApp message text from intake fields
-      const nameVal = fields.name.input.value.trim();
-      const contactVal = fields.email.input.value.trim();
-      const bizType = fields.business_type.input.options[fields.business_type.input.selectedIndex]?.text || '';
-      const budgetVal = fields.budget.input.options[fields.budget.input.selectedIndex]?.text || '';
-      const detailsVal = fields.details.input.value.trim();
-
-      let waMessage = `*New Proposal Blueprint Request*\n\n`;
-      if (nameVal) waMessage += `👤 *Name:* ${nameVal}\n`;
-      if (contactVal) waMessage += `📞 *Contact:* ${contactVal}\n`;
-      if (bizType) waMessage += `🏢 *Industry:* ${bizType}\n`;
-      if (budgetVal) waMessage += `💰 *Budget:* ${budgetVal}\n`;
-      if (detailsVal) waMessage += `📝 *Blueprint Details:*\n${detailsVal}\n`;
-
-      redirectToWhatsApp(waMessage);
-
-      // Auto scroll success card into view on small screens
-      document.getElementById('contact-form-container').scrollIntoView({ behavior: 'smooth' });
-    }, 800);
+    redirectToWhatsApp(waMessage);
   });
 
   // Reset form back to editing
