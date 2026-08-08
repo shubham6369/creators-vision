@@ -354,7 +354,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // Target WhatsApp phone number (in international format without '+' or spaces)
-  const WHATSAPP_NUMBER = '919876543210';
+  const WHATSAPP_NUMBER = '919227056944';
 
   // Helper function to construct WhatsApp URL and redirect
   const redirectToWhatsApp = (messageText) => {
